@@ -1,27 +1,28 @@
 package com.msd.crud.domain;
 
+import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
-public class User {
+public class Employee {
 	
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	private String firstName;
 	private String lastName;
-	private int age;
-			
-	public long getId() {
+	private double salary;
+	
+	
+	
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
-	}	
-
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -34,25 +35,23 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public int getAge() {
-		return age;
+	public double getSalary() {
+		return salary;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setSalary(double salary) {
+		this.salary = salary;
 	}
-	
-	public User(long userId, String firstName, String lastName, int age) {
-		this.id = userId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
-	}
-	
-	public User() {
+
+	public Employee() {
 		
 	}
-
+	
+	public Employee(int id,String firstName,String lastName,double salary) {
+			this.firstName= firstName;
+			this.lastName=lastName;
+			this.id = id;
+			this.salary = salary;
+	}
 	
 	
-
 }
